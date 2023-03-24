@@ -24,3 +24,20 @@ class Cor(models.Model):
     def __str__(self):
         return self.descricao
 
+class Veiculo(models.Model):
+    categoria = models.ForeignKey(
+        Categoria, on_delete=models.PROTECT, related_name="veiculo"
+    )
+    marca = models.ForeignKey(
+        Marca, on_delete=models.PROTECT, related_name="veiculo"
+    )
+    cor = models.ForeignKey(
+        Cor, on_delete=models.PROTECT, related_name="veiculo"
+    )
+    Ano = models.IntegerField(null=True, default=0)
+    Preco = models.DecimalField(max_digits=10, decimal_places=2, null=True, default=0)
+    Modelo = models.CharField(max_length=50)
+    def __str__(self):
+        return f'{self.marca} {self.Modelo} {self.categoria} {self.Ano} {self.cor}'
+
+
