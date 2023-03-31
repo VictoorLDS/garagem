@@ -7,8 +7,6 @@ description = ""
 authors = [
     {name = "VictoorLDS", email = "vlds221005@gmail.com"},
 ]
-dependencies = [
-    "djangorestframework>=3.14.0",
-]
+dependencies = []
 requires-python = ">=3.10"
 license = {text = "MIT"}

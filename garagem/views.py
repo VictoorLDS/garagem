@@ -4,5 +4,5 @@ from garagem.models import Marca
 from garagem.serializers import MarcaSerializer
 
 class MarcaViewSet(ModelViewSet):
-    queryset = Marca.object.all()
-    serializers_class = MarcaSerializer
+    queryset = Marca.objects.all()
+    serializer_class = MarcaSerializer
