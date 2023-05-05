@@ -26,7 +26,7 @@ class AcessorioSerializer(ModelSerializer):
 class VeiculoSerializer(ModelSerializer):
     class Meta:
         model = Veiculo
-        fields = "_all__"
+        fields = "__all__"
 
 class VeiculoDetSerializer(ModelSerializer):
     class Meta:
@@ -37,4 +37,4 @@ class VeiculoDetSerializer(ModelSerializer):
 class VeiculoListSerializer(ModelSerializer):
     class Meta:
         model = Veiculo
-        fields = ["Modelo", "Ano", "Preço"]
+        fields = ["modelo", "ano", "preco"]
