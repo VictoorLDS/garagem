@@ -19,16 +19,16 @@ from rest_framework.routers import DefaultRouter
 from garagem.views import AcessorioViewSet, CategoriaViewSet, CorViewSet, MarcaViewSet, ModeloViewSet, VeiculoViewSet
 
 router = DefaultRouter()
-router.register(r"acessorio", AcessorioViewSet)
-router.register(r"categoria", CategoriaViewSet)
-router.register(r"cor", CorViewSet)
-router.register(r"marca", MarcaViewSet)
-router.register(r"modelo", ModeloViewSet)
-router.register(r"veiculo", VeiculoViewSet)
+router.register(r"acessorios", AcessorioViewSet)
+router.register(r"categorias", CategoriaViewSet)
+router.register(r"cores", CorViewSet)
+router.register(r"marcas", MarcaViewSet)
+router.register(r"modelos", ModeloViewSet)
+router.register(r"veiculos", VeiculoViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(usuario_router.urls)),
+    path('api/usuarios', include(usuario_router.urls)),
     path("api/media/", include(uploader_router.urls)),
     path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
     path(
@@ -41,6 +41,7 @@ urlpatterns = [
         SpectacularRedocView.as_view(url_name="schema"),
         name="redoc",
     ),   
+    path('api/', include(router.urls)),
     ]
 
 urlpatterns += static(settings.MEDIA_ENDPOINT, document_root=settings.MEDIA_ROOT)
